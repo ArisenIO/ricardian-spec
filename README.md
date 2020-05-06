@@ -1,11 +1,11 @@
-## EOSIO.CDT Ricardian Contract Specification ![EOSIO Alpha](https://img.shields.io/badge/EOSIO-Alpha-blue.svg)
+## ARISEN.CDT Ricardian Contract Specification ![ARISEN Alpha](https://img.shields.io/badge/ARISEN-Alpha-blue.svg)
 
 **Spec Version**: v0.2.0
 
 ### General Information
-In conjunction with [Ricardian Template Toolkit](https://github.com/EOSIO/ricardian-template-toolkit/), this specification is a new addition to the [EOSIO.CDT](https://github.com/EOSIO/eosio.cdt) suite of tooling.
+In conjunction with [Ricardian Template Toolkit](https://github.com/ARISEN/ricardian-template-toolkit/), this specification is a new addition to the [ARISEN.CDT](https://github.com/ARISENIO/arisen.cdt) suite of tooling.
 
-The Ricardian Contract Specification gives a set of requirements that a Ricardian contract should follow in order to be considered valid. Invalid contracts may still work with non-validating user agents, but will not work with user agents which are built with the [Ricardian Template Toolkit](https://github.com/EOSIO/ricardian-template-toolkit/).
+The Ricardian Contract Specification gives a set of requirements that a Ricardian contract should follow in order to be considered valid. Invalid contracts may still work with non-validating user agents, but will not work with user agents which are built with the [Ricardian Template Toolkit](https://github.com/ARISEN/ricardian-template-toolkit/).
 
 By conforming to a common specification, contracts can be validated and presented in a common way. For instance, Resources must contain a SHA-256 hash value which will allow a validating user agent to check the resource contents and ensure that the resource at the URL has not been altered. Since resources can be used to represent the user or company that is proposing the contract, it is important that the resource URL for the contract is correct and has not been altered since the contract was published.
 
@@ -34,7 +34,7 @@ Ricardian contracts should be written in the English language. The contract itse
 
 ### Other Metadata Fields
 
-User-defined metadata fields are permissible with one exception. The `eosio` field name is reserved for future use. Contracts containing that field will be rejected.
+User-defined metadata fields are permissible with one exception. The `ARISEN` field name is reserved for future use. Contracts containing that field will be rejected.
 
 User-defined metadata fields may contain variables, which will be replaced during contract rendering.
 
@@ -64,7 +64,7 @@ The specification version follows a semantic versioning (semver) inspired scheme
 
 All variables used within a contract must have a value or the contract will be rejected. Variable values may be supplied in the transaction, in the contract action, or in the Ricardian clause on the ABI. In addition, the Ricardian Template Toolkit will supply variables about the transaction.
 
-The default scope for variables is the current action's `data` object. The `eosio.token::transfer` action, for example, has `from`, `to`, `quantity` and `memo` properties. Those variables may be referenced directly: `I am sending {{quantity}} tokens from {{from}} to {{to}}.`.
+The default scope for variables is the current action's `data` object. The `arisen.token::transfer` action, for example, has `from`, `to`, `quantity` and `memo` properties. Those variables may be referenced directly: `I am sending {{quantity}} tokens from {{from}} to {{to}}.`.
 
 The Ricardian Template Toolkit will supply the following variables, which allow the contract to refer to other parts of the transaction:
 
@@ -227,6 +227,6 @@ I, {{author}}, author of the blog post "{{title}}", certify that I am the origin
 
 ## Important
 
-See LICENSE for copyright and license terms.  Block.one makes its contribution on a voluntary basis as a member of the EOSIO community and is not responsible for ensuring the overall performance of the software or any related applications.  We make no representation, warranty, guarantee or undertaking in respect of the software or any related documentation, whether expressed or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall we be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or documentation or the use or other dealings in the software or documentation. Any test results or performance figures are indicative and will not reflect performance under all conditions.  Any reference to any third party or third-party product, service or other resource is not an endorsement or recommendation by Block.one.  We are not responsible, and disclaim any and all responsibility and liability, for your use of or reliance on any of these resources. Third-party resources may be updated, changed or terminated at any time, so the information here may be out of date or inaccurate.  Any person using or offering this software in connection with providing software, goods or services to third parties shall advise such third parties of these license terms, disclaimers and exclusions of liability.  Block.one, EOSIO, EOSIO Labs, EOS, the heptahedron and associated logos are trademarks of Block.one.
+See LICENSE for copyright and license terms.  Block.one makes its contribution on a voluntary basis as a member of the ARISEN community and is not responsible for ensuring the overall performance of the software or any related applications.  We make no representation, warranty, guarantee or undertaking in respect of the software or any related documentation, whether expressed or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall we be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or documentation or the use or other dealings in the software or documentation. Any test results or performance figures are indicative and will not reflect performance under all conditions.  Any reference to any third party or third-party product, service or other resource is not an endorsement or recommendation by Block.one.  We are not responsible, and disclaim any and all responsibility and liability, for your use of or reliance on any of these resources. Third-party resources may be updated, changed or terminated at any time, so the information here may be out of date or inaccurate.  Any person using or offering this software in connection with providing software, goods or services to third parties shall advise such third parties of these license terms, disclaimers and exclusions of liability.  Block.one, ARISEN, ARISEN Labs, EOS, the heptahedron and associated logos are trademarks of Block.one.
 
 Wallets and related components are complex software that require the highest levels of security.  If incorrectly built or used, they may compromise users’ private keys and digital assets. Wallet applications and related components should undergo thorough security evaluations before being used.  Only experienced developers should work with this software.
